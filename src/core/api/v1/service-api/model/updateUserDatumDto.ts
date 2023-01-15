@@ -38,5 +38,7 @@ export interface UpdateUserDatumDto {
     employedBefore?: boolean;
     currentlyEmpoyed?: boolean;
     underEmpoyed?: boolean;
+    userType?: string;
+    password?: string;
 }
 

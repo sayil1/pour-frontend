@@ -38,5 +38,7 @@ export interface CreateUserDatumDto {
     employedBefore?: boolean;
     currentlyEmpoyed?: boolean;
     underEmpoyed?: boolean;
+    userType?: string;
+    password?: string;
 }
 

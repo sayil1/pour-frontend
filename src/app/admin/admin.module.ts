@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { AdminRoutingModule } from './admin-routing.module';
 import { AdminComponent } from './admin/admin.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { AdminComponent } from './admin/admin.component';
   ],
   imports: [
     CommonModule,
+    BrowserModule,
     AdminRoutingModule
   ]
 })
