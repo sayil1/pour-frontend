@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CreateUserDatumDto, UserDataService } from 'src/core/api/v1/service-api';
 import decode from 'jwt-decode';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-user-profile',
@@ -12,10 +13,12 @@ export class UserProfileComponent {
 
   }
 
-  user?:CreateUserDatumDto
+
+   user:CreateUserDatumDto = {}
+
+   age?:string
   ngOnInit() {
     this.decodeUser()
-   
   }
 
   decodeUser(){
@@ -29,6 +32,10 @@ export class UserProfileComponent {
       this.user = data.data[0]
       console.log(data)
     })
+  }
+
+  submit(){
+    console.log(this.user)
   }
 
 
