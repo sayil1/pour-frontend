@@ -14,7 +14,43 @@ export class UserProfileComponent {
   }
 
 
-   user:CreateUserDatumDto = {}
+   user:CreateUserDatumDto = {
+  
+   }
+
+   levelOfEducation = [
+    {
+      name:'Tertiary',
+      value:'tertiary'
+    },
+    {
+      name:'Secondary',
+      value:'secondary'
+    },
+    {
+      name:'Primary',
+      value:'primary'
+    },
+    {
+      name:'Others',
+      value:'others'
+    }
+   ]
+
+   formOfEducation = [
+    {
+      name:'Regular',
+      value:'regular'
+    },
+    {
+      name:'Arabic',
+      value:'arabic'
+    },
+    {
+      name:'Nomadic',
+      value:'nomadic'
+    },
+   ]
 
    age?:string
   ngOnInit() {
