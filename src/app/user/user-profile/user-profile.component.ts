@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CreateUserDatumDto, UserDataService } from 'src/core/api/v1/service-api';
+import { CreateUserDatumDto, UpdateUserDatumDto, UserDataService } from 'src/core/api/v1/service-api';
 import decode from 'jwt-decode';
 import { FormControl } from '@angular/forms';
 
@@ -14,9 +14,10 @@ export class UserProfileComponent {
   }
 
 
-   user:CreateUserDatumDto = {
-  
+   user:UpdateUserDatumDto | any = {
    }
+  
+   userId:any
 
    levelOfEducation = [
     {
@@ -52,6 +53,21 @@ export class UserProfileComponent {
     },
    ]
 
+ speakerOfEnglish = [{
+    name: 'Very_Well',
+    value: 'very well'
+}, {
+    name: 'Average',
+    value: 'average'
+}, {
+    name: 'Not_At_All',
+    value: 'not at all'
+}
+]
+
+
+  
+
    age?:string
   ngOnInit() {
     this.decodeUser()
@@ -65,13 +81,25 @@ export class UserProfileComponent {
   }
   fetchUser(email:string){
     this.user_service.findOne(undefined, email).subscribe((data)=>{
+      delete data.data[0].updatedAt
+      delete data.data[0].createdAt
+      delete data.data[0].deletedAt
+      this.userId = data.data[0].id
       this.user = data.data[0]
+
       console.log(data)
     })
   }
 
   submit(){
-    console.log(this.user)
+   
+  delete this.user.id
+    let newUser = Object.fromEntries(Object.entries(this.user).filter(([_, v]) => v != null));
+    console.log(newUser)
+
+    this.user_service.update(this.userId, newUser).subscribe((data)=>{
+      console.log(data)
+    })
   }
 
 

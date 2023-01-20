@@ -21,13 +21,21 @@ export interface UpdateUserDatumDto {
     dateOfBirth?: string;
     placeOfBirth?: string;
     placeOfResidence?: string;
-    speakerOfEnglish?: boolean;
-    writingInEnglish?: boolean;
+    speakerOfEnglish?: UpdateUserDatumDto.SpeakerOfEnglishEnum;
+    writingInEnglish?: UpdateUserDatumDto.WritingInEnglishEnum;
     levelOfEducation?: UpdateUserDatumDto.LevelOfEducationEnum;
     formOfEducation?: UpdateUserDatumDto.FormOfEducationEnum;
     skillSet?: string;
     interestHobbies?: string;
     nextOfKinFullName?: string;
+    nextOfKinFirstName?: string;
+    nextOfKinLastName?: string;
+    nextOfKinEmailAddress?: string;
+    nextOfKinCurrentAddress?: string;
+    nextOfKinStateOfResidence?: string;
+    nextOfKinLga?: string;
+    about?: string;
+    image?: string;
     nextOfKinPhoneNumber?: string;
     emergencyContact?: string;
     address?: string;
@@ -56,13 +64,25 @@ export namespace UpdateUserDatumDto {
         Single: 'single' as MaritalStatusEnum,
         Widower: 'widower' as MaritalStatusEnum
     };
+    export type SpeakerOfEnglishEnum = 'very well' | 'average' | 'not at all';
+    export const SpeakerOfEnglishEnum = {
+        VeryWell: 'very well' as SpeakerOfEnglishEnum,
+        Average: 'average' as SpeakerOfEnglishEnum,
+        NotAtAll: 'not at all' as SpeakerOfEnglishEnum
+    };
+    export type WritingInEnglishEnum = 'very well' | 'average' | 'not at all';
+    export const WritingInEnglishEnum = {
+        VeryWell: 'very well' as WritingInEnglishEnum,
+        Average: 'average' as WritingInEnglishEnum,
+        NotAtAll: 'not at all' as WritingInEnglishEnum
+    };
     export type LevelOfEducationEnum = 'primary' | 'tertiary' | 'others';
     export const LevelOfEducationEnum = {
         Primary: 'primary' as LevelOfEducationEnum,
         Tertiary: 'tertiary' as LevelOfEducationEnum,
         Others: 'others' as LevelOfEducationEnum
     };
-    export type FormOfEducationEnum = 'normadic' | 'arabic' | 'regular';
+    export type FormOfEducationEnum = 'nomadic' | 'arabic' | 'regular';
     export const FormOfEducationEnum = {
         Normadic: 'normadic' as FormOfEducationEnum,
         Arabic: 'arabic' as FormOfEducationEnum,

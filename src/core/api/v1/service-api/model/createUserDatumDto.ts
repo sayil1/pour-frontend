@@ -21,13 +21,21 @@ export interface CreateUserDatumDto {
     dateOfBirth?: string;
     placeOfBirth?: string;
     placeOfResidence?: string;
-    speakerOfEnglish?: boolean;
-    writingInEnglish?: boolean;
+    speakerOfEnglish?: CreateUserDatumDto.SpeakerOfEnglishEnum;
+    writingInEnglish?: CreateUserDatumDto.WritingInEnglishEnum;
     levelOfEducation?: CreateUserDatumDto.LevelOfEducationEnum;
     formOfEducation?: CreateUserDatumDto.FormOfEducationEnum;
     skillSet?: string;
     interestHobbies?: string;
     nextOfKinFullName?: string;
+    nextOfKinFirstName?: string;
+    nextOfKinLastName?: string;
+    nextOfKinEmailAddress?: string;
+    nextOfKinCurrentAddress?: string;
+    nextOfKinStateOfResidence?: string;
+    nextOfKinLga?: string;
+    about?: string;
+    image?: string;
     nextOfKinPhoneNumber?: string;
     emergencyContact?: string;
     address?: string;
@@ -55,6 +63,18 @@ export namespace CreateUserDatumDto {
         Seperated: 'seperated' as MaritalStatusEnum,
         Single: 'single' as MaritalStatusEnum,
         Widower: 'widower' as MaritalStatusEnum
+    };
+    export type SpeakerOfEnglishEnum = 'very well' | 'average' | 'not at all';
+    export const SpeakerOfEnglishEnum = {
+        VeryWell: 'very well' as SpeakerOfEnglishEnum,
+        Average: 'average' as SpeakerOfEnglishEnum,
+        NotAtAll: 'not at all' as SpeakerOfEnglishEnum
+    };
+    export type WritingInEnglishEnum = 'very well' | 'average' | 'not at all';
+    export const WritingInEnglishEnum = {
+        VeryWell: 'very well' as WritingInEnglishEnum,
+        Average: 'average' as WritingInEnglishEnum,
+        NotAtAll: 'not at all' as WritingInEnglishEnum
     };
     export type LevelOfEducationEnum = 'primary' | 'tertiary' | 'others';
     export const LevelOfEducationEnum = {
