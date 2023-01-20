@@ -10,7 +10,7 @@
 
             <div class="flex flex-col flex-grow p-4 overflow-auto">
                 <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
-                    href="#">
+                    routerLink="/user">
                     <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -18,11 +18,16 @@
                     </svg>
                     <span class="leading-none">Dashboard</span>
                 </a>
-                <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
-                    href="#">
-                    <span class="leading-none">Applications</span>
-                </a>
-                <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
+                <button class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
+                   (click)="logout()" >
+                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                    <span class="leading-none">logout</span>
+                </button>
+                <!-- <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
                     href="#">
                     <span class="leading-none">Item 3</span>
                 </a>
@@ -46,7 +51,7 @@
                             d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
                     </svg>
                     <span class="ml-2 leading-none">Add New Applicant</span>
-                </a>
+                </a> -->
             </div>
 
 
@@ -95,7 +100,7 @@
         <div class="flex flex-col flex-grow overflow-auto overflow-x-hidden w-3/4">
             <!--Top Navbar-->
             <div class="flex items-center justify-between flex-shrink-0 h-16 px-8 border-b border-gray-300">
-                <h1 class="text-lg font-medium">Page Title</h1>
+                <h1 class="text-lg font-medium">User Data</h1>
                 <span class="ml-5 relative w-96 sm:hidden">
 
                     <div class="flex absolute left-0 top-0 bottom-0 pl-3 items-center">
@@ -116,13 +121,13 @@
 
                 <button class="relative ml-2 text-sm focus:outline-none group">
                     <div class="w-10 h-10 rounded-full">
-                        <img class="rounded-full h-10 w-10" src="assets/img/benjis.jpg">
+                        <img class="rounded-full h-10 w-10" src="assets/img/defaultUser.jpg">
                     </div>
                     <div
                         class="absolute right-0 flex-col items-start hidden w-40 pb-1 mt-5 bg-white border rounded-lg border-gray-300 shadow-lg group-focus:flex">
-                        <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
-                        <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
-                        <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
+                        <button (click)="logout()" class="w-full px-4 py-2 text-left hover:bg-gray-300">logout</button>
+                        <!-- <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
+                        <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a> -->
                     </div>
                 </button>
 
@@ -132,7 +137,7 @@
                 <div class="flex items-center md:flex bg-white rounded-lg p-6 border border-gray-200 shadow-sm ">
 
                     <img class="h-16 w-16  md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6"
-                        src="assets/img/benjis.jpg" alt="user-avatar" />
+                        src="assets/img/defaultUser.jpg" alt="user-avatar" />
                     <div class="text-center ml-2 md:text-left">
                         <h2 class="font-bold text-2xl">{{user?.name}} </h2>
                         <div class="text-purple-500 text-sm">Abuja, Nigeria</div>
@@ -239,7 +244,7 @@
                 <div class="min-h-screen">
                     <div class="md:flex md:flex-col p-6 overflow-auto sm:hidden">
                         <div class="flex justify-around my-5">
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="#personal">Name  </a>
+                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="#personal">Name </a>
                             <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Age</a>
                             <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Date of Birth</a>
                             <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Genotype</a>
@@ -440,7 +445,8 @@
                                                         <div class="flex items-center"
                                                             *ngFor="let item of formOfEducation">
                                                             <input [id]="item.value" [value]="item.value" name="foe"
-                                                                [(ngModel)]="user.formOfEducation" type="radio" class="">
+                                                                [(ngModel)]="user.formOfEducation" type="radio"
+                                                                class="">
                                                             <label for="regular"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 {{item.name}}
@@ -459,13 +465,16 @@
                                                             proficiency.</p>
                                                     </div>
                                                     <div class="mt-4 space-y-4">
-                                                        <div class="flex items-center" *ngFor="let item of speakerOfEnglish">
-                                                            <input [id]="item.value" [value]="item.value" [id]="item.value" [(ngModel)]="user.writingInEnglish" name="wie" type="radio" class="">
+                                                        <div class="flex items-center"
+                                                            *ngFor="let item of speakerOfEnglish">
+                                                            <input [id]="item.value" [value]="item.value"
+                                                                [id]="item.value" [(ngModel)]="user.writingInEnglish"
+                                                                name="wie" type="radio" class="">
                                                             <label for="verywell"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
-                                                                {{item.name}}                                                            </label>
+                                                                {{item.name}} </label>
                                                         </div>
-                                                       
+
                                                     </div>
                                                 </fieldset>
                                                 <fieldset>
@@ -476,13 +485,16 @@
                                                             proficiency</p>
                                                     </div>
                                                     <div class="mt-4 space-y-4">
-                                                        <div class="flex items-center" *ngFor="let item of speakerOfEnglish">
-                                                            <input [id]="item.value" [value]="item.value" [id]="item.value" [(ngModel)]="user.speakerOfEnglish" name="se" type="radio" class="">
+                                                        <div class="flex items-center"
+                                                            *ngFor="let item of speakerOfEnglish">
+                                                            <input [id]="item.value" [value]="item.value"
+                                                                [id]="item.value" [(ngModel)]="user.speakerOfEnglish"
+                                                                name="se" type="radio" class="">
                                                             <label for="verywell"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
-                                                                {{item.name}}                                                            </label>
+                                                                {{item.name}} </label>
                                                         </div>
-                                                        
+
                                                     </div>
                                                 </fieldset>
                                             </div>
@@ -518,7 +530,7 @@
                                                     <label for="first-name"
                                                         class="block text-base font-medium text-gray-700">Skill</label>
                                                     <input type="text" class="" name="skill Set" id="skill"
-                                                        autocomplete="skill" class="" [(ngModel)]="user.skillSet" >
+                                                        autocomplete="skill" class="" [(ngModel)]="user.skillSet">
                                                 </div>
 
                                                 <div class="col-span-6 sm:col-span-3">
@@ -526,7 +538,8 @@
                                                         class="block text-base font-medium text-gray-700">Interest/
                                                         Hobbies</label>
                                                     <input type="text" name="hobbies" id="last-name"
-                                                        autocomplete="hobbies" class="" [(ngModel)]="user.interestHobbies" >
+                                                        autocomplete="hobbies" class=""
+                                                        [(ngModel)]="user.interestHobbies">
                                                 </div>
 
                                                 <div class="col-span-6 sm:col-span-3">
@@ -534,7 +547,7 @@
                                                         class="block text-base font-medium text-gray-700">Ideal
                                                         Employment</label>
                                                     <input type="text" name="ideal employment" id="ideal-emp"
-                                                        autocomplete="" class="" [(ngModel)]="user.idealEmployment" >
+                                                        autocomplete="" class="" [(ngModel)]="user.idealEmployment">
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="opportunities"
@@ -542,7 +555,8 @@
                                                         opportunities around you
                                                     </label>
                                                     <input type="text" name="textarea" id="textarea"
-                                                        autocomplete="textarea" class="form-textarea" [(ngModel)]="user.economicOppurtunitiesAround" >
+                                                        autocomplete="textarea" class="form-textarea"
+                                                        [(ngModel)]="user.economicOppurtunitiesAround">
                                                 </div>
 
 
@@ -557,14 +571,17 @@
                                                     </div>
                                                     <div class="mt-4 space-y-4">
                                                         <div class="flex items-center">
-                                                            <input checked="checked" value="no" id="no" name="emp-before" type="radio" class="" [(ngModel)]="user.employedBefore" >
+                                                            <input checked="checked" value="no" id="no"
+                                                                name="emp-before" type="radio" class=""
+                                                                [(ngModel)]="user.employedBefore">
                                                             <label for="No"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 No
                                                             </label>
                                                         </div>
                                                         <div class="flex items-center">
-                                                            <input value="yes" id="yes" name="emp-before" type="radio" class=""  [(ngModel)]="user.employedBefore">
+                                                            <input value="yes" id="yes" name="emp-before" type="radio"
+                                                                class="" [(ngModel)]="user.employedBefore">
                                                             <label for="yes"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 Yes
@@ -583,14 +600,17 @@
                                                     </div>
                                                     <div class="mt-4 space-y-4">
                                                         <div class="flex items-center">
-                                                            <input checked="checked" value="no" id="no" name="employed" type="radio" [(ngModel)]="user.currentlyEmpoyed" class="">
+                                                            <input checked="checked" value="no" id="no" name="employed"
+                                                                type="radio" [(ngModel)]="user.currentlyEmpoyed"
+                                                                class="">
                                                             <label for="no"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 NO
                                                             </label>
                                                         </div>
                                                         <div class="flex items-center">
-                                                            <input value="yes" id="" name="employed" type="radio" class="" [(ngModel)]="user.currentlyEmpoyed">
+                                                            <input value="yes" id="" name="employed" type="radio"
+                                                                class="" [(ngModel)]="user.currentlyEmpoyed">
                                                             <label for="arabic"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 Yes
@@ -608,14 +628,16 @@
                                                     </div>
                                                     <div class="mt-4 space-y-4">
                                                         <div class="flex items-center">
-                                                            <input value="yes" id="yes" name="under" type="radio" class="" [(ngModel)]="user.underEmpoyed">
+                                                            <input value="yes" id="yes" name="under" type="radio"
+                                                                class="" [(ngModel)]="user.underEmpoyed">
                                                             <label for="yes"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 Yes
                                                             </label>
                                                         </div>
                                                         <div class="flex items-center">
-                                                            <input value="no" id="no" name="under" type="radio" class="" [(ngModel)]="user.underEmpoyed">
+                                                            <input value="no" id="no" name="under" type="radio" class=""
+                                                                [(ngModel)]="user.underEmpoyed">
                                                             <label for="no"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 No
@@ -668,7 +690,8 @@
                                                         class="block text-base font-medium text-gray-700">Last
                                                         name</label>
                                                     <input type="text" name="last-name" id="last-name"
-                                                        autocomplete="family-name" class="" [(ngModel)]="user.nextOfKinLastName" >
+                                                        autocomplete="family-name" class=""
+                                                        [(ngModel)]="user.nextOfKinLastName">
                                                 </div>
 
                                                 <div class="col-span-6 sm:col-span-3">
@@ -676,14 +699,16 @@
                                                         class="block text-base font-medium text-gray-700">Email
                                                         address</label>
                                                     <input type="email" name="email-address" id="email-address"
-                                                        autocomplete="email" [(ngModel)]="user.nextOfKinEmailAddress" class="">
+                                                        autocomplete="email" [(ngModel)]="user.nextOfKinEmailAddress"
+                                                        class="">
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="email-address"
                                                         class="block text-base font-medium text-gray-700">Phone Number
                                                     </label>
                                                     <input type="email" name="email-address" id="email-address"
-                                                        autocomplete="email" [(ngModel)]="user.nextOfKinPhoneNumber" class="">
+                                                        autocomplete="email" [(ngModel)]="user.nextOfKinPhoneNumber"
+                                                        class="">
                                                 </div>
                                                 <div class="col-span-6">
                                                     <label for="street-address"
@@ -692,13 +717,15 @@
                                                     </label>
                                                     <input type="text" name="street-address" id="street-address"
                                                         autocomplete="street-address"
-                                                        class="block w-full shadow-sm sm:text-base border-gray-300 rounded-md" [(ngModel)]="user.nextOfKinCurrentAddress">
+                                                        class="block w-full shadow-sm sm:text-base border-gray-300 rounded-md"
+                                                        [(ngModel)]="user.nextOfKinCurrentAddress">
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="country"
                                                         class="block text-base font-medium text-gray-700">
                                                         State of Residence</label>
-                                                    <select name="state" autocomplete="states" class="" [(ngModel)]="user.nextOfKinStateOfResidence">
+                                                    <select name="state" autocomplete="states" class=""
+                                                        [(ngModel)]="user.nextOfKinStateOfResidence">
                                                         <datalist id="states">
                                                             <option>Select State of Residence</option>
                                                             <option>Abia</option>
@@ -713,7 +740,8 @@
                                                     <label for="country"
                                                         class="block text-base font-medium text-gray-700">
                                                         Local Goverment Area</label>
-                                                    <select name="state" autocomplete="states" class=""[(ngModel)]="user.nextOfKinLga" >
+                                                    <select name="state" autocomplete="states" class=""
+                                                        [(ngModel)]="user.nextOfKinLga">
                                                         <datalist id="states">
                                                             <option>Local Goverment Area of Residence</option>
                                                             <option>Abia</option>
@@ -756,14 +784,14 @@
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="dob"
                                                         class="block text-sm font-medium text-gray-700">DOB</label>
-                                                    <input  type="date" class="" name="dob" id="dob" autocomplete="dob"
-                                                        class=""[(ngModel)]="user.dateOfBirth" >
+                                                    <input type="date" class="" name="dob" id="dob" autocomplete="dob"
+                                                        class="" [(ngModel)]="user.dateOfBirth">
                                                 </div>
                                                 <div class="col-span-6 sm:col-span-3">
                                                     <label for="dob"
                                                         class="block text-sm font-medium text-gray-700">Age</label>
                                                     <input type="text" class="" name="age" id="age" autocomplete="age"
-                                                        class="" >
+                                                        class="">
                                                 </div>
                                             </div>
 
@@ -774,14 +802,16 @@
                                                 </div>
                                                 <div class="mt-4 space-y-4">
                                                     <div class="flex items-center">
-                                                        <input value="female" id="female" name="gender" type="radio" class="" [(ngModel)]="user.gender">
+                                                        <input value="female" id="female" name="gender" type="radio"
+                                                            class="" [(ngModel)]="user.gender">
                                                         <label for="female"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             Female
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input value="male" id="male" name="emp-before" type="radio" class="" [(ngModel)]="user.gender">
+                                                        <input value="male" id="male" name="emp-before" type="radio"
+                                                            class="" [(ngModel)]="user.gender">
                                                         <label for="male"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             Male
@@ -799,28 +829,32 @@
                                                 </div>
                                                 <div class="mt-4 space-y-4">
                                                     <div class="flex items-center">
-                                                        <input value="married" id="married" name="m-status" type="radio" class="" [(ngModel)]="user.maritalStatus">
+                                                        <input value="married" id="married" name="m-status" type="radio"
+                                                            class="" [(ngModel)]="user.maritalStatus">
                                                         <label for="married"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             Married
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input value="single" id="single" name="m-status" type="radio" class="" [(ngModel)]="user.maritalStatus">
+                                                        <input value="single" id="single" name="m-status" type="radio"
+                                                            class="" [(ngModel)]="user.maritalStatus">
                                                         <label for="single"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             Single
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input value="divorce" id="divorced" name="m-status" type="radio" class="" [(ngModel)]="user.maritalStatus">
+                                                        <input value="divorce" id="divorced" name="m-status"
+                                                            type="radio" class="" [(ngModel)]="user.maritalStatus">
                                                         <label for="divorced"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             Divorced
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input value="widowed" id="widowed" name="m-status" type="radio" class="" [(ngModel)]="user.maritalStatus">
+                                                        <input value="widowed" id="widowed" name="m-status" type="radio"
+                                                            class="" [(ngModel)]="user.maritalStatus">
                                                         <label for="widowed"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             widowed
@@ -838,29 +872,33 @@
                                                 </div>
                                                 <div class="mt-4 space-y-4">
                                                     <div class="flex items-center">
-                                                        <input value="AA"id="aa" name="genotype" type="radio" class="" [(ngModel)]="user.genotype">
+                                                        <input value="AA" id="aa" name="genotype" type="radio" class=""
+                                                            [(ngModel)]="user.genotype">
                                                         <label for="aa"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             AA
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input value="AC" id="ac" name="genotype" type="radio" class="" [(ngModel)]="user.genotype">
+                                                        <input value="AC" id="ac" name="genotype" type="radio" class=""
+                                                            [(ngModel)]="user.genotype">
                                                         <label for="ac"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             AC
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input value="AS" id="as" name="genotype" type="radio" class="" [(ngModel)]="user.genotype">
+                                                        <input value="AS" id="as" name="genotype" type="radio" class=""
+                                                            [(ngModel)]="user.genotype">
                                                         <label for="as"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             AS
                                                         </label>
                                                     </div>
-                                                    
+
                                                     <div class="flex items-center">
-                                                        <input value="SC" id="sc" name="genotype" type="radio" class="" [(ngModel)]="user.genotype">
+                                                        <input value="SC" id="sc" name="genotype" type="radio" class=""
+                                                            [(ngModel)]="user.genotype">
                                                         <label for="sc"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             SC
@@ -879,28 +917,32 @@
                                                 </div>
                                                 <div class="mt-4 space-y-4">
                                                     <div class="flex items-center">
-                                                        <input id="a" name="blood" value="A"type="radio" class="" [(ngModel)]="user.bloodGroup">
+                                                        <input id="a" name="blood" value="A" type="radio" class=""
+                                                            [(ngModel)]="user.bloodGroup">
                                                         <label for="a"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             A
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input id="ab" name="blood" value="AB" type="radio" class="" [(ngModel)]="user.bloodGroup">
+                                                        <input id="ab" name="blood" value="AB" type="radio" class=""
+                                                            [(ngModel)]="user.bloodGroup">
                                                         <label for="ab"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             AB
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input id="b" name="blood" value="B" type="radio" class="" [(ngModel)]="user.bloodGroup">
+                                                        <input id="b" name="blood" value="B" type="radio" class=""
+                                                            [(ngModel)]="user.bloodGroup">
                                                         <label for="b"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             B
                                                         </label>
                                                     </div>
                                                     <div class="flex items-center">
-                                                        <input id="o" name="blood" value="O" type="radio" class="" [(ngModel)]="user.bloodGroup">
+                                                        <input id="o" name="blood" value="O" type="radio" class=""
+                                                            [(ngModel)]="user.bloodGroup">
                                                         <label for="o"
                                                             class="ml-3 block text-base font-medium text-gray-700">
                                                             O
@@ -917,7 +959,8 @@
                                                 </label>
                                                 <div class="mt-1">
                                                     <textarea id="about" name="about" rows="4" class=""
-                                                        placeholder="you@example.com" [(ngModel)]="user.about"></textarea>
+                                                        placeholder="you@example.com"
+                                                        [(ngModel)]="user.about"></textarea>
                                                 </div>
                                                 <p class="mt-2 text-base text-gray-500">
                                                     Brief description for your profile. URLs are hyperlinked.

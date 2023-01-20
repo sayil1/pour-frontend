@@ -21,4 +21,8 @@ export class AllUsersComponent {
       this.usersList = data.data.list
     })
   }
+
+  updateData(data:any){
+   console.log(data)
+  }
 }

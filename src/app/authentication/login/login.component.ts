@@ -32,7 +32,7 @@ export class LoginComponent {
       
       const tokenPayload:any = decode(data.data);
       if(tokenPayload?.userType === 'admin'){
-        this.router.navigate(['admin'])
+        this.router.navigate(['admin/main'])
       } else if(tokenPayload?.userType === 'regular'){
         this.router.navigate(['user'])
       }

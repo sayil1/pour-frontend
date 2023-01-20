@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CreateUserDatumDto, UpdateUserDatumDto, UserDataService } from 'src/core/api/v1/service-api';
 import decode from 'jwt-decode';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -9,7 +10,7 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  constructor( private user_service: UserDataService,){
+  constructor( private user_service: UserDataService, public router: Router){
 
   }
 
@@ -100,6 +101,11 @@ export class UserProfileComponent {
     this.user_service.update(this.userId, newUser).subscribe((data)=>{
       console.log(data)
     })
+  }
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['/'])
   }
 
 
