@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { AdminMainComponent } from './admin.component';
 import { AllUsersComponent } from './all-users/all-users.component';
 import { CreateUsersComponent } from './create-users/create-users.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -17,6 +18,7 @@ import { CreateUsersComponent } from './create-users/create-users.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     BrowserModule,
     AdminRoutingModule,
     RouterModule
