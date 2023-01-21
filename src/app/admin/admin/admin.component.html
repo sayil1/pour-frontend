@@ -137,7 +137,7 @@
                     <div class="py-8">
                         <div class="flex justify-between items-center">
                             <h2 class="text-2xl font-semibold leading-tight">Recent Applicants</h2>
-                            <a href=""
+                            <a  routerLink="/admin/users"
                                 class="inline-block px-4 py-2 border border-transparent text-sm leading-5 font-medium rounded-md text-white bg-[#1c3359] hover:bg-indigo-500 focus:outline-none focus:shadow-outline">
                                 View All
                             </a>
@@ -182,7 +182,7 @@
                                                         <p class="text-gray-900 font-bold whitespace-no-wrap">
                                                             {{item.name}}
                                                         </p>
-                                                        <p class="text-slate-400 whitespace-no-wrap">00001</p>
+                                                        <!-- <p class="text-slate-400 whitespace-no-wrap">00001</p> -->
                                                     </div>
                                                 </div>
                                             </td>
@@ -197,14 +197,14 @@
                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <p class="text-gray-900 whitespace-no-wrap">{{item.address}}
                                                 </p>
-                                                <p class="text-gray-900 whitespace-no-wrap">Kano, Kano</p>
+                                                <!-- <p class="text-gray-900 whitespace-no-wrap">Kano, Kano</p> -->
                                             </td>
                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
                                                 <span
                                                     class="relative inline-block px-3 py-1 font-semibold text-red-900 leading-tight">
                                                     <span aria-hidden
                                                         class="absolute inset-0 bg-red-200 opacity-50 rounded-full"></span>
-                                                    <span class="relative">Others</span>
+                                                    <span class="relative">{{item.levelOfEducation}}</span>
                                                 </span>
                                             </td>
                                             <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm text-right">

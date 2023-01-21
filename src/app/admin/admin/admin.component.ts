@@ -36,7 +36,7 @@ export class AdminComponent {
   }
 
   fetchUsers(){
-    this.user_service.findAll(100, 0, undefined, undefined).subscribe((data)=>{
+    this.user_service.findAll(10, 0, undefined, undefined).subscribe((data)=>{
       console.log(data)
       this.usersList = data.data.list
     })

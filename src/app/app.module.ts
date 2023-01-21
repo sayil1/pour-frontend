@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { JwtModule } from '@auth0/angular-jwt';
 import { StoreModule } from '@ngrx/store';
+import { NotifierModule } from 'angular-notifier';
 import { environment } from 'src/environment/environment';
 import { counterReducer,} from 'src/store/reducers/users.reducers';
 import { BASE_PATH as employments_BASE_PATHG } from '../core/api/v1/service-api';
@@ -28,7 +29,19 @@ export function tokenGetter() {
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, AdminModule, AuthenticationModule, UserModule,
+    HttpClientModule, AdminModule, AuthenticationModule, UserModule,  NotifierModule.withConfig({
+      // Custom options in here
+      position: {
+        horizontal: {
+          position: 'middle',
+          distance: 12
+        },
+        vertical: {
+          position: 'bottom',
+          distance: 12
+        }
+      }
+    }),
     StoreModule.forRoot({ count: counterReducer }),
     JwtModule.forRoot({
       config: {

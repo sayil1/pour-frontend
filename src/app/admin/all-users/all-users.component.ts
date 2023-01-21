@@ -25,4 +25,17 @@ export class AllUsersComponent {
   updateData(data:any){
    console.log(data)
   }
+
+  delete(data:any){
+    
+    if (confirm(`You are about to delete ${data.name || data.fname}'s data`) == true) {
+      this.user_service.remove(data.id).subscribe((data)=>{
+        console.log(data)
+        this.fetchUsers()
+      })
+    } else {
+    
+    }
+
+  }
 }
