@@ -28,6 +28,16 @@ export class AdminComponent {
     this.fetchUsers()
   }
 
+  calculateAge(date: Date) {
+    if(date){
+      var timeDiff = Math.abs(Date.now() - new Date(date).getTime());
+      return `${Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25)} Years` ;
+    } else {
+      return ""
+    }
+
+  }
+
   fetchStats(){
     this.user_service.stats('2020-12-12', '2040-12-12', ).subscribe((data)=>{
       console.log(data)

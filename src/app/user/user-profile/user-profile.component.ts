@@ -3,6 +3,7 @@ import { CreateUserDatumDto, UpdateUserDatumDto, UserDataService } from 'src/cor
 import decode from 'jwt-decode';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NotifierService } from 'angular-notifier';
 
 @Component({
   selector: 'app-user-profile',
@@ -10,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  constructor( private user_service: UserDataService, public router: Router){
+  constructor( private user_service: UserDataService, public router: Router, private notifierService: NotifierService){
 
   }
 
@@ -66,7 +67,7 @@ export class UserProfileComponent {
 }
 ]
 
-
+loading:boolean = false
   
 
    age?:string
@@ -93,13 +94,19 @@ export class UserProfileComponent {
   }
 
   submit(){
+    this.loading = true
    
   delete this.user.id
     let newUser = Object.fromEntries(Object.entries(this.user).filter(([_, v]) => v != null));
     console.log(newUser)
 
-    this.user_service.update(this.userId, newUser).subscribe((data)=>{
-      console.log(data)
+    this.user_service.update(this.userId, newUser).subscribe({
+      next: (data) => {
+        this.notifierService.notify('success', "Saved successfully")
+      },
+      error: () => {
+        this.notifierService.notify('warn', "error")
+      }
     })
   }
 

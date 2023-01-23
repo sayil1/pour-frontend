@@ -15,6 +15,16 @@ export class AllUsersComponent {
     this.fetchUsers()
   }
 
+  calculateAge(date: Date) {
+    if(date){
+      var timeDiff = Math.abs(Date.now() - new Date(date).getTime());
+      return `${Math.floor(timeDiff / (1000 * 3600 * 24) / 365.25)} Years` ;
+    } else {
+      return ""
+    }
+
+  }
+
   fetchUsers() {
     this.user_service.findAll(100, 0, undefined, undefined).subscribe((data) => {
       console.log(data)
@@ -22,19 +32,19 @@ export class AllUsersComponent {
     })
   }
 
-  updateData(data:any){
-   console.log(data)
+  updateData(data: any) {
+    console.log(data)
   }
 
-  delete(data:any){
-    
+  delete(data: any) {
+
     if (confirm(`You are about to delete ${data.name || data.fname}'s data`) == true) {
-      this.user_service.remove(data.id).subscribe((data)=>{
+      this.user_service.remove(data.id).subscribe((data) => {
         console.log(data)
         this.fetchUsers()
       })
     } else {
-    
+
     }
 
   }

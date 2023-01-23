@@ -286,14 +286,14 @@
                                                     class="block text-base font-medium text-gray-700">First
                                                     name</label>
                                                 <input type="text" class="" name="first-name" id="first-name"
-                                                    autocomplete="given-name" class="" [(ngModel)]="user.name">
+                                                    autocomplete="given-name" class="" [(ngModel)]="user.fname">
                                             </div>
 
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label for="last-name"
                                                     class="block text-base font-medium text-gray-700">Last
                                                     name</label>
-                                                <input type="text" name="last-name" id="last-name"
+                                                <input type="text" name="last-name" id="last-name" [(ngModel)]="user.lname"
                                                     autocomplete="family-name" class="">
                                             </div>
 
@@ -948,9 +948,6 @@
                                                             O
                                                         </label>
                                                     </div>
-
-
-
                                                 </div>
                                             </fieldset>
                                             <div>
@@ -1030,13 +1027,14 @@
                         </div>
                     </div>
                     <div class="px-4 py-3 text-right sm:px-6 mx-40">
-                        <button type="button"
+                        <!-- <button type="button"
                             class="inline-flex justify-center py-3 px-5 text-base font-bold rounded-lg text-[#1c3349] bg-white border-[#1c3559] border mr-4">
                             Save and Continue
-                        </button>
+                        </button> -->
                         <button type="button" (click)="submit()"
                             class="inline-flex justify-center py-3 px-5 text-base font-bold rounded-md text-white bg-[#1c3359] shadow-lg">
-                            Submit
+                            {{loading===false ? 'Save' : 'Saving ....'}}
+
                         </button>
                     </div>
                 </div>

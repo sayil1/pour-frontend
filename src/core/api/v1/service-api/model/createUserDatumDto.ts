@@ -15,12 +15,16 @@ export interface CreateUserDatumDto {
     title?: string;
     gender?: CreateUserDatumDto.GenderEnum;
     name?: string;
+    fname?: string;
+    lname?: string;
     genotype?: string;
     bloodGroup?: string;
     maritalStatus?: CreateUserDatumDto.MaritalStatusEnum;
     dateOfBirth?: string;
     placeOfBirth?: string;
     placeOfResidence?: string;
+    stateOfResidence?: string;
+    lgaOfResidence?: string;
     speakerOfEnglish?: CreateUserDatumDto.SpeakerOfEnglishEnum;
     writingInEnglish?: CreateUserDatumDto.WritingInEnglishEnum;
     levelOfEducation?: CreateUserDatumDto.LevelOfEducationEnum;
@@ -43,18 +47,18 @@ export interface CreateUserDatumDto {
     email?: string;
     idealEmployment?: string;
     economicOppurtunitiesAround?: string;
-    employedBefore?: boolean;
-    currentlyEmpoyed?: boolean;
-    underEmpoyed?: boolean;
+    employedBefore?: string;
+    currentlyEmpoyed?: string;
+    underEmpoyed?: string;
     userType?: CreateUserDatumDto.UserTypeEnum;
     password?: string;
 }
 export namespace CreateUserDatumDto {
-    export type GenderEnum = 'Male' | 'Female' | 'Other';
+    export type GenderEnum = 'male' | 'female' | 'other';
     export const GenderEnum = {
-        Male: 'Male' as GenderEnum,
-        Female: 'Female' as GenderEnum,
-        Other: 'Other' as GenderEnum
+        Male: 'male' as GenderEnum,
+        Female: 'female' as GenderEnum,
+        Other: 'other' as GenderEnum
     };
     export type MaritalStatusEnum = 'married' | 'divorced' | 'seperated' | 'single' | 'widower';
     export const MaritalStatusEnum = {

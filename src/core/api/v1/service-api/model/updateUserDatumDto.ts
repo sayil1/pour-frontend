@@ -15,12 +15,16 @@ export interface UpdateUserDatumDto {
     title?: string;
     gender?: UpdateUserDatumDto.GenderEnum;
     name?: string;
+    fname?: string;
+    lname?: string;
     genotype?: string;
     bloodGroup?: string;
     maritalStatus?: UpdateUserDatumDto.MaritalStatusEnum;
     dateOfBirth?: string;
     placeOfBirth?: string;
     placeOfResidence?: string;
+    stateOfResidence?: string;
+    lgaOfResidence?: string;
     speakerOfEnglish?: UpdateUserDatumDto.SpeakerOfEnglishEnum;
     writingInEnglish?: UpdateUserDatumDto.WritingInEnglishEnum;
     levelOfEducation?: UpdateUserDatumDto.LevelOfEducationEnum;
@@ -43,18 +47,18 @@ export interface UpdateUserDatumDto {
     email?: string;
     idealEmployment?: string;
     economicOppurtunitiesAround?: string;
-    employedBefore?: boolean;
-    currentlyEmpoyed?: boolean;
-    underEmpoyed?: boolean;
+    employedBefore?: string;
+    currentlyEmpoyed?: string;
+    underEmpoyed?: string;
     userType?: UpdateUserDatumDto.UserTypeEnum;
     password?: string;
 }
 export namespace UpdateUserDatumDto {
-    export type GenderEnum = 'Male' | 'Female' | 'Other';
+    export type GenderEnum = 'male' | 'female' | 'other';
     export const GenderEnum = {
-        Male: 'Male' as GenderEnum,
-        Female: 'Female' as GenderEnum,
-        Other: 'Other' as GenderEnum
+        Male: 'male' as GenderEnum,
+        Female: 'female' as GenderEnum,
+        Other: 'other' as GenderEnum
     };
     export type MaritalStatusEnum = 'married' | 'divorced' | 'seperated' | 'single' | 'widower';
     export const MaritalStatusEnum = {
@@ -82,7 +86,7 @@ export namespace UpdateUserDatumDto {
         Tertiary: 'tertiary' as LevelOfEducationEnum,
         Others: 'others' as LevelOfEducationEnum
     };
-    export type FormOfEducationEnum = 'nomadic' | 'arabic' | 'regular';
+    export type FormOfEducationEnum = 'normadic' | 'arabic' | 'regular';
     export const FormOfEducationEnum = {
         Normadic: 'normadic' as FormOfEducationEnum,
         Arabic: 'arabic' as FormOfEducationEnum,
