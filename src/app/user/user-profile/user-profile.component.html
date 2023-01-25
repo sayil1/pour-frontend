@@ -1,107 +1,144 @@
-<body class="overflow-x-hidden bg-slate-100">
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+<body class="overflow-x-hidden bg-slate-50">
     <div class="flex w-screen h-screen text-gray-700">
 
         <!-- Component Start -->
         <!--Sidebar Starts Here-->
-        <div class="md:flex md:flex-col hidden bg-white border-r border-gray-300">
+        <div class="flex flex-col bg-white border-r border-gray-300 md:flex sm:hidden">
             <div class="flex p-4">
                 <img src="assets/img/logo.png" width="150px">
             </div>
 
-            <div class="flex flex-col flex-grow p-4 overflow-auto">
-                <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
-                    routerLink="/user">
-                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            <div class="flex flex-col flex-grow p-4 overflow-auto bg-white">
+                <a class="flex items-center flex-shrink-0 h-10 px-2 mb-2 text-base font-medium rounded hover:bg-gray-300"
+                    href="pour-user.html">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24">
+                        <g fill="none">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+                                fill="currentColor"></path>
+                            <path d="M11 14a1 1 0 0 1 1 1v6h2v-6a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v6h2v-6a1 1 0 0 1 1-1h6z"
+                                fill="currentColor"></path>
+                            <path d="M22 11h-6v2h6v-2z" fill="currentColor"></path>
+                            <path d="M16 15h6v2h-6v-2z" fill="currentColor"></path>
+                            <path d="M22 7h-6v2h6V7z" fill="currentColor"></path>
+                        </g>
                     </svg>
-                    <span class="leading-none">Dashboard</span>
+                    <span class="leading-none ml-2">My Account</span>
                 </a>
-                <button class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
-                   (click)="logout()" >
-                    <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                <a class="flex items-center flex-shrink-0 h-10 px-2 mb-2 text-base font-medium rounded hover:bg-gray-300"
+                (click)="onClick('#personal')">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24">
+                     <g fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M8 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm0-2a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"
+                            fill="currentColor"></path>
+                        <path d="M11 14a1 1 0 0 1 1 1v6h2v-6a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v6h2v-6a1 1 0 0 1 1-1h6z"
+                            fill="currentColor"></path>
+                        <path d="M22 11h-6v2h6v-2z" fill="currentColor"></path>
+                        <path d="M16 15h6v2h-6v-2z" fill="currentColor"></path>
+                        <path d="M22 7h-6v2h6V7z" fill="currentColor"></path>
+                     </g>
                     </svg>
-                    <span class="leading-none">logout</span>
-                </button>
-                <!-- <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
-                    href="#">
-                    <span class="leading-none">Item 3</span>
+                <span class="leading-none ml-2">Personal info</span>
                 </a>
-                <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
-                    href="#">
-                    <span class="leading-none">Item 4</span>
+                <a class="flex items-center flex-shrink-0 h-10 px-2 mb-2 text-base font-medium rounded hover:bg-gray-300"
+                    href="#education">
+                    <svg class="h-5 w-5" viewBox="0 0 24 24">
+                        <g fill="none">
+                          <path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z" fill="currentColor"></path>
+                        </g>
+                      </svg>
+                    <span class="leading-none ml-2">Education</span>
+                </a>              
+                <a class="flex items-center flex-shrink-0 h-10 px-2 mb-2 text-base font-medium rounded hover:bg-gray-300"
+                    href="#skill">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24">
+                        <g stroke-linecap="round" stroke-linejoin="round" stroke-width="2" fill="none" stroke="currentColor">
+                          <path d="M14,19l2.95,2.95A3.5,3.5,0,0,0,21.9,22l.051-.051h0A3.5,3.5,0,0,0,22,17l-.051-.051L20,15"></path>
+                          <polyline points="11.491 8.866 4.203 1.578 1.661 4.12 8.779 11.238"></polyline>
+                          <path d="M22.678,4.922,19.6,7.987l-3.6-3.576,3.08-3.066a4.214,4.214,0,0,0-2.259-.307,5.615,5.615,0,0,0-5.133,5.723A4.223,4.223,0,0,0,12,8.4L2.145,17.083a3.419,3.419,0,0,0-.276,4.827c.023.027.047.052.071.078h0a3.286,3.286,0,0,0,4.647.1,3.232,3.232,0,0,0,.281-.3l8.726-9.81a6.717,6.717,0,0,0,2.875.2A5.687,5.687,0,0,0,22.78,8.192,5.088,5.088,0,0,0,22.678,4.922Z"></path>
+                        </g>
+                      </svg>
+                    <span class="leading-none ml-2">Skills & Job</span>
                 </a>
-                <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
-                    href="#">
-                    <span class="leading-none">Item 5</span>
+                <a class="flex items-center flex-shrink-0 h-10 px-2 mb-2 text-base font-medium rounded hover:bg-gray-300"
+                    href="#nextofkin">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24">
+                        <g fill="none">
+                          <path d="M16.67 13.13C18.04 14.06 19 15.32 19 17v3h4v-3c0-2.18-3.57-3.47-6.33-3.87z" fill="currentColor"></path>
+                          <path d="M15 12c2.21 0 4-1.79 4-4s-1.79-4-4-4c-.47 0-.91.1-1.33.24a5.98 5.98 0 0 1 0 7.52c.42.14.86.24 1.33.24z" fill="currentColor"></path>
+                          <path d="M9 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0-6c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z" fill="currentColor"></path>
+                          <path d="M9 13c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4zm6 5H3v-.99C3.2 16.29 6.3 15 9 15s5.8 1.29 6 2v1z" fill="currentColor"></path>
+                        </g>
+                      </svg>
+                    <span class="leading-none ml-2">Next Of Kin</span>
                 </a>
-                <a class="flex items-center flex-shrink-0 h-10 px-2 text-base font-medium rounded hover:bg-gray-300"
-                    href="#">
-                    <span class="leading-none">Item 6</span>
+                <a class="flex items-center flex-shrink-0 h-10 px-2 mb-2  text-base font-medium rounded hover:bg-gray-300"
+                    href="#about">
+                    <svg  class="w-5 h-5" viewBox="0 0 24 24">
+                        <g fill="none">
+                          <path d="M7 18h10v-2H7v2z" fill="currentColor"></path>
+                          <path d="M17 14H7v-2h10v2z" fill="currentColor"></path>
+                          <path d="M7 10h4V8H7v2z" fill="currentColor"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M6 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V9a7 7 0 0 0-7-7H6zm0 2h7v5h6v10a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm9 .1A5.009 5.009 0 0 1 18.584 7H15V4.1z" fill="currentColor"></path>
+                        </g>
+                      </svg>
+                    <span class="leading-none ml-2">More Info</span>
                 </a>
-                <a class="flex items-center flex-shrink-0 h-10 px-3 mt-auto text-base font-medium bg-gray-200 rounded hover:bg-gray-300"
-                    href="#">
-                    <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                        stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M12 6v6m0 0v6m0-6h6m-6 0H6" />
-                    </svg>
-                    <span class="ml-2 leading-none">Add New Applicant</span>
-                </a> -->
+                <a class="flex items-center flex-shrink-0 h-10 px-4 mt-auto mx-auto text-sm font-medium bg-[#ffcc00] rounded hover:bg-[#1c3359] hover:text-white"
+                href="user-form.html">
+                <svg class="h-5 w-5" viewBox="0 0 24 24">
+                    <g fill="none">
+                      <path d="M13 4.009a1 1 0 1 0-2 0l-.003 8.003a1 1 0 0 0 2 0L13 4.01z" fill="currentColor"></path>
+                      <path d="M4 12.992c0-2.21.895-4.21 2.343-5.657l1.414 1.414a6 6 0 1 0 8.485 0l1.415-1.414A8 8 0 1 1 4 12.992z" fill="currentColor"></path>
+                    </g>
+                  </svg>
+                <span class="leading-none">Log Out</span>
+            </a>
             </div>
-
-
-
 
         </div>
         <!--Sidebar Ends Here-->
         <!--Mobile App Nav starts-->
         <div
-            class="flex flex-row fixed md:hidden z-30 bottom-0 bg-white w-full flex-shrink-0 h-16 items-center justify-between px-8">
+            class="flex flex-row fixed md:hidden z-30 bottom-0 bg-white w-full flex-shrink-0 h-16 items-center mx-auto justify-between px-8">
             <a class="flex flex-col items-center h-10 px-2 text-sm font-medium rounded hover:bg-gray-300" href="#">
-                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-                <span class="leading-none">Dashboard</span>
+                <svg class="h-8 w-8" viewBox="0 0 24 24">
+                    <g fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M21 8.772l-6.98-6.979a3 3 0 0 0-4.242 0L3 8.571v14.515h7v-6a2 2 0 1 1 4 0v6h7V8.772zm-9.808-5.565L5 9.4v11.686h3v-4a4 4 0 0 1 8 0v4h3V9.6l-6.393-6.394a1 1 0 0 0-1.415 0z" fill="currentColor"></path>
+                    </g>
+                  </svg>
+                <span class="leading-none">My Account</span>
             </a>
-            <a class="flex items-center h-10 px-2 text-sm font-medium rounded hover:bg-gray-300" href="#">
-                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+            <a class="flex flex-col items-center h-10 px-2 text-sm font-medium rounded hover:bg-gray-300" href="#">
+                <svg class="w-8 h-8" viewBox="0 0 24 24">
+                    <g fill="none">
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M14 3v.29c2.892.86 5 3.539 5 6.71v7h1v2H4v-2h1v-7a7.003 7.003 0 0 1 5-6.71V3a2 2 0 1 1 4 0zM7 17h10v-7a5 5 0 0 0-10 0v7zm7 4v-1h-4v1a2 2 0 1 0 4 0z" fill="currentColor"></path>
+                    </g>
                 </svg>
-                <!-- <span class="leading-none">Dashboard</span> -->
+                <span class="leading-none">Notificatio</span>
             </a>
-            <a class="flex items-center h-10 px-2 text-sm font-medium rounded hover:bg-gray-300" href="#">
-                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-                <!-- <span class="leading-none">Dashboard</span> -->
-            </a>
-            <a class="flex items-center h-10 px-2 text-sm font-medium rounded hover:bg-gray-300" href="#">
-                <svg class="w-8 h-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                </svg>
-                <!-- <span class="leading-none">Dashboard</span> -->
+            <a class="flex flex-col items-center h-10 px-2 text-sm font-medium rounded hover:bg-gray-300" href="#">
+                    <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                <span class="leading-none">Settings</span>
             </a>
         </div>
         <!--Mobile App Nav ends-->
         <!--Main content Starts-->
         <div class="flex flex-col flex-grow overflow-auto overflow-x-hidden w-3/4">
             <!--Top Navbar-->
-            <div class="flex items-center justify-between flex-shrink-0 h-16 px-8 border-b border-gray-300">
-                <h1 class="text-lg font-medium">User Data</h1>
-                <span class="ml-5 relative w-96 sm:hidden">
+            <div class="flex items-center justify-between flex-shrink-0 h-16 px-8 bg-white border-b border-gray-300">
+                <h1 class="text-lg font-medium">Hello,</h1>
+                <span class="ml-5 relative w-96 hidden md:flex">
 
                     <div class="flex absolute left-0 top-0 bottom-0 pl-3 items-center">
                         <img src="assets/img/search.svg" class="w-9 pl-3 items-center flex">
@@ -112,37 +149,37 @@
 
                 </span>
 
-                <button class="h-10 px-4 ml-auto text-sm font-medium rounded hover:bg-gray-300 sm:hidden">
-                    Action 1
+                <button class="h-10 px-4 ml-auto text-sm font-medium rounded hover:bg-gray-300 hidden md:block">
+                    Log In 
                 </button>
-                <button class="h-10 px-4 ml-2 text-sm font-medium bg-gray-200 rounded hover:bg-gray-300 sm:hidden">
-                    Action 2
+                <button class="h-10 px-4 ml-2 text-sm font-medium bg-gray-200 rounded hover:bg-gray-300 hidden md:block">
+                    Sign Out
                 </button>
 
                 <button class="relative ml-2 text-sm focus:outline-none group">
                     <div class="w-10 h-10 rounded-full">
-                        <img class="rounded-full h-10 w-10" src="assets/img/defaultUser.jpg">
+                        <img class="rounded-full h-10 w-10" src="assets/img/benjis.jpg">
                     </div>
                     <div
                         class="absolute right-0 flex-col items-start hidden w-40 pb-1 mt-5 bg-white border rounded-lg border-gray-300 shadow-lg group-focus:flex">
-                        <button (click)="logout()" class="w-full px-4 py-2 text-left hover:bg-gray-300">logout</button>
-                        <!-- <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
-                        <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a> -->
+                        <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
+                        <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
+                        <a class="w-full px-4 py-2 text-left hover:bg-gray-300" href="#">Menu Item 1</a>
                     </div>
                 </button>
 
             </div>
             <!--Top Navbar End-->
-            <div class="flex-grow p-6 overflow-auto">
+            <div class="flex-grow p-8 overflow-auto bg-gray-200 px-8 pb-32">
                 <div class="flex items-center md:flex bg-white rounded-lg p-6 border border-gray-200 shadow-sm ">
 
                     <img class="h-16 w-16  md:h-24 md:w-24 rounded-full mx-auto md:mx-0 md:mr-6"
-                        src="assets/img/defaultUser.jpg" alt="user-avatar" />
+                        src="assets/img/benjis.jpg" alt="user-avatar" />
                     <div class="text-center ml-2 md:text-left">
-                        <h2 class="font-bold text-2xl">{{user?.name}} </h2>
+                        <h2 class="font-bold text-2xl">Obi Segun Buhari</h2>
                         <div class="text-purple-500 text-sm">Abuja, Nigeria</div>
-                        <div class="text-gray-600 text-sm">{{user?.email}}</div>
-                        <div class="text-gray-600 text-sm">{{user?.phoneNumber}}</div>
+                        <div class="text-gray-600 text-sm">mail@pour.ng</div>
+                        <div class="text-gray-600 text-sm">070-6515-4321</div>
                     </div>
                 </div>
                 <div class="flex">
@@ -241,33 +278,45 @@
 
                     </div>
                 </div>
-                <div class="min-h-screen">
-                    <div class="md:flex md:flex-col p-6 overflow-auto sm:hidden">
+                <div class="min-h-screen flex flex-col items-centers mx-auto">
+                    <div class="md:flex md:flex-col p-1 overflow-auto hidden">
                         <div class="flex justify-around my-5">
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="#personal">Name </a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Age</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Date of Birth</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Genotype</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Blood Group</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Marital Status</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Place Of Birth</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Place Of Residence</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Date Of Birth</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium"
+                                href="#personal">Name</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="#about">Age</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="#about">Date of
+                                Birth</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="#about">Genotype</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="#about">Blood Group</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="#about">Marital
+                                Status</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="#personal">Place Of
+                                Birth</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Place Of
+                                Residence</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Date Of
+                                Birth</a>
                         </div>
                         <div class="flex justify-around my-5">
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="#personal">Language Pro</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Next of KIN</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Date of Birth</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Genotype</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Blood Group</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Marital Status</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Place Of Birth</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Place Of Residence</a>
-                            <a class="border-r-2 mr-2 px-2 border-r-red-400" href="">Date Of Birth</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500 text-sm font-medium"
+                                href="#personal">Language</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Next of KIN</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Date of
+                                Birth</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Genotype</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Blood Group</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium " href="">Marital
+                                Status</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Place Of
+                                Birth</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Place Of
+                                Residence</a>
+                            <a class="border-r-2 mr-2 px-2 border-r-yellow-500  text-sm font-medium" href="">Date Of
+                                Birth</a>
                         </div>
                     </div>
                     <!--Personal Info-->
-                    <div id="personal" class="mt-20 sm:mt-0 mx-40">
+                    <div id="personal" class="mt-20 sm:mt-0 md:mx-40">
                         <div class="md:grid md:grid-cols-1 md:gap-6">
                             <div class="md:col-span-1 items-start">
                                 <div class="px-4 mt-10 sm:px-0">
@@ -278,117 +327,122 @@
                                 </div>
                             </div>
                             <div class="mt-5 md:mt-0 md:col-span-1">
-                                <div class="shadow overflow-hidden sm:rounded-md">
-                                    <div class="px-4 py-5 bg-white sm:p-6">
-                                        <div class="grid grid-cols-6 gap-6">
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="first-name"
-                                                    class="block text-base font-medium text-gray-700">First
-                                                    name</label>
-                                                <input type="text" class="" name="first-name" id="first-name"
-                                                    autocomplete="given-name" class="" [(ngModel)]="user.fname">
-                                            </div>
+                                <form action="#" method="POST">
+                                    <div class="shadow overflow-hidden sm:rounded-md">
+                                        <div class="px-4 py-5 bg-white sm:p-6">
+                                            <div class="grid grid-cols-6 gap-6">
+                                                <div class="col-span-6 md:col-span-3">
+                                                    <label for="first-name"
+                                                        class="block text-base font-medium text-gray-700">First
+                                                        name</label>
+                                                    <input type="text" class="" name="first-name" id="first-name"
+                                                        autocomplete="given-name" class="">
+                                                </div>
 
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="last-name"
-                                                    class="block text-base font-medium text-gray-700">Last
-                                                    name</label>
-                                                <input type="text" name="last-name" id="last-name" [(ngModel)]="user.lname"
-                                                    autocomplete="family-name" class="">
-                                            </div>
+                                                <div class="col-span-6 md:col-span-3">
+                                                    <label for="last-name"
+                                                        class="block text-base font-medium text-gray-700">Last
+                                                        name</label>
+                                                    <input type="text" name="last-name" id="last-name"
+                                                        autocomplete="family-name" class="">
+                                                </div>
 
-                                            <div class="col-span-6">
-                                                <label for="email-address"
-                                                    class="block text-base font-medium text-gray-700">Email
-                                                    address</label>
-                                                <input type="email" name="email-address" id="email-address"
-                                                    autocomplete="email" class="" [(ngModel)]="user.email">
-                                            </div>
-                                            <div class="col-span-6">
-                                                <label for="email-address"
-                                                    class="block text-base font-medium text-gray-700">Phone Number
-                                                </label>
-                                                <input type="email" name="email-address" id="email-address"
-                                                    autocomplete="email" class="" [(ngModel)]="user.phoneNumber">
-                                            </div>
-                                            <div class="col-span-6">
-                                                <label for="street-address"
-                                                    class="block text-base font-medium text-gray-700"> Current Address
-                                                </label>
-                                                <input type="text" name="street-address" id="street-address"
-                                                    autocomplete="street-address"
-                                                    class="block w-full shadow-sm sm:text-base border-gray-300 rounded-md"
-                                                    [(ngModel)]="user.address">
-                                            </div>
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="country" class="block text-base font-medium text-gray-700">
-                                                    State of Residence</label>
-                                                <select name="state" autocomplete="states"
-                                                    placeholder="Select State of Residence" class=""
-                                                    [(ngModel)]="user.placeOfResidence" placeholder="see">
+                                                <div class="col-span-6">
+                                                    <label for="email-address"
+                                                        class="block text-base font-medium text-gray-700">Email
+                                                        address</label>
+                                                    <input type="email" name="email-address" id="email-address"
+                                                        autocomplete="email" class="">
+                                                </div>
+                                                <div class="col-span-6">
+                                                    <label for="email-address"
+                                                        class="block text-base font-medium text-gray-700">Phone Number
+                                                    </label>
+                                                    <input type="email" name="email-address" id="email-address"
+                                                        autocomplete="email" class="">
+                                                </div>
+                                               
+                                                
+                                                <div class="col-span-6">
+                                                    <label for="street-address"
+                                                        class="block text-base font-medium text-gray-700"> Current
+                                                        Address
+                                                    </label>
+                                                    <input type="text" name="street-address" id="street-address"
+                                                        autocomplete="street-address"
+                                                        class="block w-full shadow-sm sm:text-base border-gray-300 rounded-md">
+                                                </div>
+                                                <div class="col-span-6 md:col-span-3">
+                                                    <label for="country"
+                                                        class="block text-base font-medium text-gray-700">
+                                                        State of Residence</label>
+                                                    <select name="state" autocomplete="states"
+                                                        placeholder="Select State of Residence" class="">
 
-                                                    <option disabled selected>--Select State of Residence--</option>
-                                                    <option value="" selected></option>
-                                                    <option value="Abia">Abia</option>
-                                                    <option value="Adamawa">Adamawa</option>
-                                                    <option value="Akwa Ibom">Akwa Ibom</option>
-                                                    <option value="Anambra">Anambra</option>
-                                                    <option value="Bauchi">Bauchi</option>
-                                                    <option value="Bayelsa">Bayelsa</option>
-                                                    <option value="Benue">Benue</option>
-                                                    <option value="Borno">Borno</option>
-                                                    <option value="Cross River">Cross River</option>
-                                                    <option value="Delta">Delta</option>
-                                                    <option value="Ebonyi">Ebonyi</option>
-                                                    <option value="Edo">Edo</option>
-                                                    <option value="Ekiti">Ekiti</option>
-                                                    <option value="Enugu">Enugu</option>
-                                                    <option value="FCT">Federal Capital Territory</option>
-                                                    <option value="Gombe">Gombe</option>
-                                                    <option value="Imo">Imo</option>
-                                                    <option value="Jigawa">Jigawa</option>
-                                                    <option value="Kaduna">Kaduna</option>
-                                                    <option value="Kano">Kano</option>
-                                                    <option value="Katsina">Katsina</option>
-                                                    <option value="Kebbi">Kebbi</option>
-                                                    <option value="Kogi">Kogi</option>
-                                                    <option value="Kwara">Kwara</option>
-                                                    <option value="Lagos">Lagos</option>
-                                                    <option value="Nasarawa">Nasarawa</option>
-                                                    <option value="Niger">Niger</option>
-                                                    <option value="Ogun">Ogun</option>
-                                                    <option value="Ondo">Ondo</option>
-                                                    <option value="Osun">Osun</option>
-                                                    <option value="Oyo">Oyo</option>
-                                                    <option value="Plateau">Plateau</option>
-                                                    <option value="Rivers">Rivers</option>
-                                                    <option value="Sokoto">Sokoto</option>
-                                                    <option value="Taraba">Taraba</option>
-                                                    <option value="Yobe">Yobe</option>
-                                                    <option value="Zamfara">Zamfara</option>
-
-
-                                                </select>
-                                            </div>
-                                            <div class="col-span-6 sm:col-span-3">
-                                                <label for="country" class="block text-base font-medium text-gray-700">
-                                                    Local Goverment Area</label>
-                                                <select name="state" autocomplete="states" class="">
-
-                                                    <option>Local Goverment Area of Residence</option>
-                                                    <option>Abia</option>
-                                                    <option>Adamawa</option>
-                                                    <option>Akwa-Ibom</option>
-                                                    <option>Cross River</option>
+                                                        <option disabled selected>--Select State of Residence--</option>
+                                                        <option value="" selected></option>
+                                                        <option value="Abia">Abia</option>
+                                                        <option value="Adamawa">Adamawa</option>
+                                                        <option value="Akwa Ibom">Akwa Ibom</option>
+                                                        <option value="Anambra">Anambra</option>
+                                                        <option value="Bauchi">Bauchi</option>
+                                                        <option value="Bayelsa">Bayelsa</option>
+                                                        <option value="Benue">Benue</option>
+                                                        <option value="Borno">Borno</option>
+                                                        <option value="Cross River">Cross River</option>
+                                                        <option value="Delta">Delta</option>
+                                                        <option value="Ebonyi">Ebonyi</option>
+                                                        <option value="Edo">Edo</option>
+                                                        <option value="Ekiti">Ekiti</option>
+                                                        <option value="Enugu">Enugu</option>
+                                                        <option value="FCT">Federal Capital Territory</option>
+                                                        <option value="Gombe">Gombe</option>
+                                                        <option value="Imo">Imo</option>
+                                                        <option value="Jigawa">Jigawa</option>
+                                                        <option value="Kaduna">Kaduna</option>
+                                                        <option value="Kano">Kano</option>
+                                                        <option value="Katsina">Katsina</option>
+                                                        <option value="Kebbi">Kebbi</option>
+                                                        <option value="Kogi">Kogi</option>
+                                                        <option value="Kwara">Kwara</option>
+                                                        <option value="Lagos">Lagos</option>
+                                                        <option value="Nasarawa">Nasarawa</option>
+                                                        <option value="Niger">Niger</option>
+                                                        <option value="Ogun">Ogun</option>
+                                                        <option value="Ondo">Ondo</option>
+                                                        <option value="Osun">Osun</option>
+                                                        <option value="Oyo">Oyo</option>
+                                                        <option value="Plateau">Plateau</option>
+                                                        <option value="Rivers">Rivers</option>
+                                                        <option value="Sokoto">Sokoto</option>
+                                                        <option value="Taraba">Taraba</option>
+                                                        <option value="Yobe">Yobe</option>
+                                                        <option value="Zamfara">Zamfara</option>
 
 
-                                                </select>
+                                                    </select>
+                                                </div>
+                                                <div class="col-span-6 md:col-span-3">
+                                                    <label for="country"
+                                                        class="block text-base font-medium text-gray-700">
+                                                        Local Goverment Area</label>
+                                                    <select name="state" autocomplete="states" class="">
 
+                                                        <option>Local Goverment Area of Residence</option>
+                                                        <option>Abia</option>
+                                                        <option>Adamawa</option>
+                                                        <option>Akwa-Ibom</option>
+                                                        <option>Cross River</option>
+
+
+                                                    </select>
+
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -398,7 +452,7 @@
                         </div>
                     </div>
                     <!--Level Of Education-->
-                    <div id="education" class="mt-10 sm:mt-0 mx-40">
+                    <div id="education" class="mt-10 sm:mt-0 md:mx-40">
                         <div class="md:grid md:grid-cols-1 md:gap-6">
                             <div class="md:col-span-1">
                                 <div class="px-4 mt-10 sm:px-0">
@@ -411,7 +465,7 @@
                             <div class="mt-5 md:mt-0 md:col-span-1">
                                 <form action="#" method="POST">
                                     <div class="shadow overflow-hidden sm:rounded-md">
-                                        <div class="px-4 py-5 bg-white sm:p-6">
+                                        <div class=" py-5 bg-white">
                                             <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
                                                 <fieldset>
                                                     <div>
@@ -421,17 +475,34 @@
                                                             you complete ?</p>
                                                     </div>
                                                     <div class="mt-4 space-y-4">
-                                                        <div class="flex items-center"
-                                                            *ngFor="let item of levelOfEducation">
-                                                            <input [id]="item.value" [value]="item.value" name="loe"
-                                                                type="radio" class=""
-                                                                [(ngModel)]="user.levelOfEducation">
-                                                            <label [for]="item.value"
+                                                        <div class="flex items-center">
+                                                            <input id="loe" name="loe" type="radio" class="">
+                                                            <label for="tertiary"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
-                                                                {{item.name}}
+                                                                Tertiary
                                                             </label>
                                                         </div>
-
+                                                        <div class="flex items-center">
+                                                            <input id="sec" name="loe" type="radio" class="">
+                                                            <label for="secondary"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                                Secondary
+                                                            </label>
+                                                        </div>
+                                                        <div class="flex items-center">
+                                                            <input id="pri" name="loe" type="radio" class="">
+                                                            <label for="primary"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                                Primary
+                                                            </label>
+                                                        </div>
+                                                        <div class="flex items-center">
+                                                            <input id="other" name="loe" type="radio" class="">
+                                                            <label for="other"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                                Others
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
                                                 <fieldset>
@@ -442,18 +513,27 @@
                                                             attend</p>
                                                     </div>
                                                     <div class="mt-4 space-y-4">
-                                                        <div class="flex items-center"
-                                                            *ngFor="let item of formOfEducation">
-                                                            <input [id]="item.value" [value]="item.value" name="foe"
-                                                                [(ngModel)]="user.formOfEducation" type="radio"
-                                                                class="">
+                                                        <div class="flex items-center">
+                                                            <input id="regular" name="foe" type="radio" class="">
                                                             <label for="regular"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
-                                                                {{item.name}}
+                                                                Regualr
                                                             </label>
                                                         </div>
-
-
+                                                        <div class="flex items-center">
+                                                            <input id="arabic" name="foe" type="radio" class="">
+                                                            <label for=" arabic"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                            Arabic
+                                                            </label>
+                                                        </div>
+                                                        <div class="flex items-center">
+                                                            <input id="nomadic" name="foe" type="radio" class="">
+                                                            <label for="nomadic"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                                Nomadic
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
                                                 <fieldset>
@@ -465,16 +545,28 @@
                                                             proficiency.</p>
                                                     </div>
                                                     <div class="mt-4 space-y-4">
-                                                        <div class="flex items-center"
-                                                            *ngFor="let item of speakerOfEnglish">
-                                                            <input [id]="item.value" [value]="item.value"
-                                                                [id]="item.value" [(ngModel)]="user.writingInEnglish"
-                                                                name="wie" type="radio" class="">
+                                                        <div class="flex items-center">
+                                                            <input id="verywell" name="wie" type="radio" class="">
                                                             <label for="verywell"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
-                                                                {{item.name}} </label>
+                                                                Very well
+                                                            </label>
                                                         </div>
-
+                                                        <div class="flex items-center">
+                                                            <input id="average" name="wie" type="radio" class="">
+                                                            <label for="average"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                                Average
+                                                            </label>
+                                                        </div>
+                                                        <div class="flex items-center">
+                                                            <input id="no" name="wie" type="radio"
+                                                                class="focus:ring-indigo-500 h-4 w-4 text-indigo-600 border-gray-300">
+                                                            <label for="no"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                                Not at all
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
                                                 <fieldset>
@@ -485,22 +577,32 @@
                                                             proficiency</p>
                                                     </div>
                                                     <div class="mt-4 space-y-4">
-                                                        <div class="flex items-center"
-                                                            *ngFor="let item of speakerOfEnglish">
-                                                            <input [id]="item.value" [value]="item.value"
-                                                                [id]="item.value" [(ngModel)]="user.speakerOfEnglish"
-                                                                name="se" type="radio" class="">
+                                                        <div class="flex items-center">
+                                                            <input id="verywell" name="soe" type="radio" class="">
                                                             <label for="verywell"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
-                                                                {{item.name}} </label>
+                                                                Very well
+                                                            </label>
                                                         </div>
-
+                                                        <div class="flex items-center">
+                                                            <input id="average" name="soe" type="radio" class="">
+                                                            <label for="average"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                                Average
+                                                            </label>
+                                                        </div>
+                                                        <div class="flex items-center">
+                                                            <input id="no" name="soe" type="radio" class="">
+                                                            <label for="no"
+                                                                class="ml-3 block text-base font-medium text-gray-700">
+                                                                Not at all
+                                                            </label>
+                                                        </div>
                                                     </div>
                                                 </fieldset>
                                             </div>
                                         </div>
                                     </div>
-
                                 </form>
                             </div>
                         </div>
@@ -511,14 +613,12 @@
                         </div>
                     </div>
                     <!--Skills -->
-                    <div id="skill" class="mt-10 sm:mt-0 mx-40">
+                    <div id="skill" class="mt-10 sm:mt-0 md:mx-40">
                         <div class="md:grid md:grid-cols-1 md:gap-6">
                             <div class="md:col-span-1 items-start">
                                 <div class="px-4 mt-10 sm:px-0">
                                     <h3 class="text-2xl font-bold leading-6 text-gray-900">Skills and Job</h3>
-                                    <p class="mt-1 text-base text-gray-600">
-                                        Your skill proficiency.
-                                    </p>
+                                    <p class="mt-1 text-base text-gray-600">Your skill proficiency.</p>
                                 </div>
                             </div>
                             <div class="mt-5 md:mt-0 md:col-span-1">
@@ -526,37 +626,35 @@
                                     <div class="shadow overflow-hidden sm:rounded-md">
                                         <div class="px-8 py-5 bg-white sm:p-6">
                                             <div class="grid grid-cols-6 gap-6 mb-5">
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="first-name"
                                                         class="block text-base font-medium text-gray-700">Skill</label>
                                                     <input type="text" class="" name="skill Set" id="skill"
-                                                        autocomplete="skill" class="" [(ngModel)]="user.skillSet">
+                                                        autocomplete="skill" class="">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="hobbies"
                                                         class="block text-base font-medium text-gray-700">Interest/
                                                         Hobbies</label>
                                                     <input type="text" name="hobbies" id="last-name"
-                                                        autocomplete="hobbies" class=""
-                                                        [(ngModel)]="user.interestHobbies">
+                                                        autocomplete="hobbies" class="">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="ideal-emp"
                                                         class="block text-base font-medium text-gray-700">Ideal
                                                         Employment</label>
                                                     <input type="text" name="ideal employment" id="ideal-emp"
-                                                        autocomplete="" class="" [(ngModel)]="user.idealEmployment">
+                                                        autocomplete="" class="">
                                                 </div>
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="opportunities"
                                                         class="block text-base font-medium text-gray-700">List economic
                                                         opportunities around you
                                                     </label>
                                                     <input type="text" name="textarea" id="textarea"
-                                                        autocomplete="textarea" class="form-textarea"
-                                                        [(ngModel)]="user.economicOppurtunitiesAround">
+                                                        autocomplete="textarea" class="form-textarea">
                                                 </div>
 
 
@@ -565,23 +663,21 @@
                                                 <fieldset class="mb-4">
                                                     <div>
                                                         <legend class="text-base font-medium text-gray-900">Have you
-                                                            been employed before ?</legend>
+                                                            been
+                                                            employed before ?</legend>
                                                         <p class="text-base text-gray-500">Have you gotten a job before.
                                                         </p>
                                                     </div>
                                                     <div class="mt-4 space-y-4">
                                                         <div class="flex items-center">
-                                                            <input checked="checked" value="no" id="no"
-                                                                name="emp-before" type="radio" class=""
-                                                                [(ngModel)]="user.employedBefore">
+                                                            <input id="no" name="emp-before" type="radio" class="">
                                                             <label for="No"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 No
                                                             </label>
                                                         </div>
                                                         <div class="flex items-center">
-                                                            <input value="yes" id="yes" name="emp-before" type="radio"
-                                                                class="" [(ngModel)]="user.employedBefore">
+                                                            <input id="yes" name="emp-before" type="radio" class="">
                                                             <label for="yes"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 Yes
@@ -600,17 +696,14 @@
                                                     </div>
                                                     <div class="mt-4 space-y-4">
                                                         <div class="flex items-center">
-                                                            <input checked="checked" value="no" id="no" name="employed"
-                                                                type="radio" [(ngModel)]="user.currentlyEmpoyed"
-                                                                class="">
+                                                            <input id="no" name="employed" type="radio" class="">
                                                             <label for="no"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 NO
                                                             </label>
                                                         </div>
                                                         <div class="flex items-center">
-                                                            <input value="yes" id="" name="employed" type="radio"
-                                                                class="" [(ngModel)]="user.currentlyEmpoyed">
+                                                            <input id="" name="employed" type="radio" class="">
                                                             <label for="arabic"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 Yes
@@ -624,20 +717,19 @@
                                                         <legend class="text-base font-medium text-gray-900">Are you
                                                             under-employed ?</legend>
                                                         <p class="text-base text-gray-500">Do you feel under employed
-                                                            with your current job?</p>
+                                                            with
+                                                            your current job?</p>
                                                     </div>
                                                     <div class="mt-4 space-y-4">
                                                         <div class="flex items-center">
-                                                            <input value="yes" id="yes" name="under" type="radio"
-                                                                class="" [(ngModel)]="user.underEmpoyed">
+                                                            <input id="yes" name="under" type="radio" class="">
                                                             <label for="yes"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 Yes
                                                             </label>
                                                         </div>
                                                         <div class="flex items-center">
-                                                            <input value="no" id="no" name="under" type="radio" class=""
-                                                                [(ngModel)]="user.underEmpoyed">
+                                                            <input id="no" name="under" type="radio" class="">
                                                             <label for="no"
                                                                 class="ml-3 block text-base font-medium text-gray-700">
                                                                 No
@@ -646,10 +738,8 @@
 
                                                     </div>
                                                 </fieldset>
-
                                             </div>
                                         </div>
-
                                     </div>
                                 </form>
                             </div>
@@ -661,7 +751,7 @@
                         </div>
                     </div>
                     <!--Next of Kin-->
-                    <div id="nextofkin" class="mt-10 sm:mt-0 mx-40">
+                    <div id="nextofkin" class="mt-10 sm:mt-0 md:mx-40">
                         <div class="md:grid md:grid-cols-1 md:gap-6">
                             <div class="md:col-span-1 items-start">
                                 <div class="px-4 mt-10 sm:px-0">
@@ -676,39 +766,35 @@
                                     <div class="shadow overflow-hidden sm:rounded-md">
                                         <div class="px-4 py-5 bg-white sm:p-6">
                                             <div class="grid grid-cols-6 gap-6">
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="first-name"
                                                         class="block text-base font-medium text-gray-700">First
                                                         Name</label>
                                                     <input type="text" class="" name="first-name" id="first-name"
-                                                        autocomplete="given-name" class="" [value]="user.name"
-                                                        [(ngModel)]="user.nextOfKinFirstName">
+                                                        autocomplete="given-name" class="">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="last-name"
                                                         class="block text-base font-medium text-gray-700">Last
                                                         name</label>
                                                     <input type="text" name="last-name" id="last-name"
-                                                        autocomplete="family-name" class=""
-                                                        [(ngModel)]="user.nextOfKinLastName">
+                                                        autocomplete="family-name" class="">
                                                 </div>
 
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="email-address"
                                                         class="block text-base font-medium text-gray-700">Email
                                                         address</label>
                                                     <input type="email" name="email-address" id="email-address"
-                                                        autocomplete="email" [(ngModel)]="user.nextOfKinEmailAddress"
-                                                        class="">
+                                                        autocomplete="email" class="">
                                                 </div>
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="email-address"
                                                         class="block text-base font-medium text-gray-700">Phone Number
                                                     </label>
                                                     <input type="email" name="email-address" id="email-address"
-                                                        autocomplete="email" [(ngModel)]="user.nextOfKinPhoneNumber"
-                                                        class="">
+                                                        autocomplete="email" class="">
                                                 </div>
                                                 <div class="col-span-6">
                                                     <label for="street-address"
@@ -717,15 +803,13 @@
                                                     </label>
                                                     <input type="text" name="street-address" id="street-address"
                                                         autocomplete="street-address"
-                                                        class="block w-full shadow-sm sm:text-base border-gray-300 rounded-md"
-                                                        [(ngModel)]="user.nextOfKinCurrentAddress">
+                                                        class="block w-full shadow-sm sm:text-base border-gray-300 rounded-md">
                                                 </div>
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="country"
                                                         class="block text-base font-medium text-gray-700">
                                                         State of Residence</label>
-                                                    <select name="state" autocomplete="states" class=""
-                                                        [(ngModel)]="user.nextOfKinStateOfResidence">
+                                                    <select name="state" autocomplete="states" class="">
                                                         <datalist id="states">
                                                             <option>Select State of Residence</option>
                                                             <option>Abia</option>
@@ -736,12 +820,11 @@
 
                                                     </select>
                                                 </div>
-                                                <div class="col-span-6 sm:col-span-3">
+                                                <div class="col-span-6 md:col-span-3">
                                                     <label for="country"
                                                         class="block text-base font-medium text-gray-700">
                                                         Local Goverment Area</label>
-                                                    <select name="state" autocomplete="states" class=""
-                                                        [(ngModel)]="user.nextOfKinLga">
+                                                    <select name="state" autocomplete="states" class="">
                                                         <datalist id="states">
                                                             <option>Local Goverment Area of Residence</option>
                                                             <option>Abia</option>
@@ -766,299 +849,281 @@
                         </div>
                     </div>
                     <!--About-->
-                    <div id="about" class="mt-10 sm:mt-0 mx-40">
+                    <div id="about" class="mt-10 sm:mt-0 md:mx-40">
                         <div class="md:grid md:grid-cols-1 md:gap-6">
                             <div class="md:col-span-1">
                                 <div class="px-4 mt-10 sm:px-0">
                                     <h3 class="text-2xl font-bold leading-6 text-gray-900">About You</h3>
                                     <p class="mt-1 text-base text-gray-600">
-                                        This information will be displayed publicly so be careful what you share.
-                                    </p>
+                                        This information will be displayed publicly so be careful what you share.</p>
                                 </div>
                             </div>
-                            <div class="mt-5 md:mt-0 md:col-span-2">
-                                <form action="#" method="POST">
-                                    <div class="shadow sm:rounded-md sm:overflow-hidden">
-                                        <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
-                                            <div class="grid grid-cols-6 gap-6">
-                                                <div class="col-span-6 sm:col-span-3">
-                                                    <label for="dob"
-                                                        class="block text-sm font-medium text-gray-700">DOB</label>
-                                                    <input type="date" class="" name="dob" id="dob" autocomplete="dob"
-                                                        class="" [(ngModel)]="user.dateOfBirth">
-                                                </div>
-                                                <div class="col-span-6 sm:col-span-3">
-                                                    <label for="dob"
-                                                        class="block text-sm font-medium text-gray-700">Age</label>
-                                                    <input type="text" class="" name="age" id="age" autocomplete="age"
-                                                        class="">
-                                                </div>
+                        </div>
+                        <div class="mt-5 md:mt-0 md:col-span-2">
+                            <form action="#" method="POST">
+                                <div class="shadow sm:rounded-md sm:overflow-hidden">
+                                    <div class="px-4 py-5 bg-white space-y-6 sm:p-6">
+                                        <div class="grid grid-cols-6 gap-6">
+                                            <div class="col-span-6 md:col-span-3">
+                                                <label for="dob"
+                                                    class="block text-sm font-medium text-gray-700">DOB</label>
+                                                <input type="date" class="" name="dob" id="dob" autocomplete="dob"
+                                                    class="">
                                             </div>
+                                            <div class="col-span-6 md:col-span-3">
+                                                <label for="dob"
+                                                    class="block text-sm font-medium text-gray-700">Age</label>
+                                                <input type="text" class="" name="age" id="age" autocomplete="age"
+                                                    class="">
+                                            </div>
+                                        </div>
 
-                                            <fieldset class="mb-4">
-                                                <div>
-                                                    <legend class="text-base font-medium text-gray-900">Gender</legend>
-                                                    <p class="text-base text-gray-500">What is your Gender</p>
+                                        <fieldset class="mb-4">
+                                            <div>
+                                                <legend class="text-base font-medium text-gray-900">Gender</legend>
+                                                <p class="text-sm text-gray-500">What is your Gender</p>
+                                            </div>
+                                            <div class="mt-4 space-y-4">
+                                                <div class="flex items-center">
+                                                    <input id="female" name="gender" type="radio" class="">
+                                                    <label for="female"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        Female
+                                                    </label>
                                                 </div>
-                                                <div class="mt-4 space-y-4">
-                                                    <div class="flex items-center">
-                                                        <input value="female" id="female" name="gender" type="radio"
-                                                            class="" [(ngModel)]="user.gender">
-                                                        <label for="female"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            Female
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input value="male" id="male" name="emp-before" type="radio"
-                                                            class="" [(ngModel)]="user.gender">
-                                                        <label for="male"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            Male
-                                                        </label>
-                                                    </div>
-
-
+                                                <div class="flex items-center">
+                                                    <input id="male" name="emp-before" type="radio" class="">
+                                                    <label for="male"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        Male
+                                                    </label>
                                                 </div>
-                                            </fieldset>
-                                            <fieldset class="mb-4">
-                                                <div>
-                                                    <legend class="text-base font-medium text-gray-900">Marital Status
-                                                    </legend>
-                                                    <p class="text-base text-gray-500">What is yiur marital status.</p>
+
+
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="mb-4">
+                                            <div>
+                                                <legend class="text-base font-medium text-gray-900">Marital Status
+                                                </legend>
+                                                <p class="text-sm text-gray-500">What is yiur marital status.</p>
+                                            </div>
+                                            <div class="mt-4 space-y-4">
+                                                <div class="flex items-center">
+                                                    <input id="married" name="m-status" type="radio" class="">
+                                                    <label for="married"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        Married
+                                                    </label>
                                                 </div>
-                                                <div class="mt-4 space-y-4">
-                                                    <div class="flex items-center">
-                                                        <input value="married" id="married" name="m-status" type="radio"
-                                                            class="" [(ngModel)]="user.maritalStatus">
-                                                        <label for="married"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            Married
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input value="single" id="single" name="m-status" type="radio"
-                                                            class="" [(ngModel)]="user.maritalStatus">
-                                                        <label for="single"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            Single
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input value="divorce" id="divorced" name="m-status"
-                                                            type="radio" class="" [(ngModel)]="user.maritalStatus">
-                                                        <label for="divorced"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            Divorced
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input value="widowed" id="widowed" name="m-status" type="radio"
-                                                            class="" [(ngModel)]="user.maritalStatus">
-                                                        <label for="widowed"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            widowed
-                                                        </label>
-                                                    </div>
-
-
+                                                <div class="flex items-center">
+                                                    <input id="single" name="m-status" type="radio" class="">
+                                                    <label for="single"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        Single
+                                                    </label>
                                                 </div>
-                                            </fieldset>
-                                            <fieldset class="mb-4">
-                                                <div>
-                                                    <legend class="text-base font-medium text-gray-900">Genotype
-                                                    </legend>
-                                                    <p class="text-base text-gray-500">What is your genotype?</p>
+                                                <div class="flex items-center">
+                                                    <input id="divorced" name="m-status" type="radio" class="">
+                                                    <label for="divorced"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        Divorced
+                                                    </label>
                                                 </div>
-                                                <div class="mt-4 space-y-4">
-                                                    <div class="flex items-center">
-                                                        <input value="AA" id="aa" name="genotype" type="radio" class=""
-                                                            [(ngModel)]="user.genotype">
-                                                        <label for="aa"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            AA
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input value="AC" id="ac" name="genotype" type="radio" class=""
-                                                            [(ngModel)]="user.genotype">
-                                                        <label for="ac"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            AC
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input value="AS" id="as" name="genotype" type="radio" class=""
-                                                            [(ngModel)]="user.genotype">
-                                                        <label for="as"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            AS
-                                                        </label>
-                                                    </div>
-
-                                                    <div class="flex items-center">
-                                                        <input value="SC" id="sc" name="genotype" type="radio" class=""
-                                                            [(ngModel)]="user.genotype">
-                                                        <label for="sc"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            SC
-                                                        </label>
-                                                    </div>
-
-
+                                                <div class="flex items-center">
+                                                    <input id="widowed" name="m-status" type="radio" class="">
+                                                    <label for="widowed"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        widowed
+                                                    </label>
                                                 </div>
-                                            </fieldset>
-                                            <fieldset class="mb-4">
-                                                <div>
-                                                    <legend class="text-base font-bold text-gray-900">Blood Group
-                                                    </legend>
-                                                    <p class="text-base text-gray-500">Please provide you blood group
+
+
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="mb-4">
+                                            <div>
+                                                <legend class="text-base font-medium text-gray-900">Genotype</legend>
+                                                <p class="text-sm text-gray-500">What is your genotype?</p>
+                                            </div>
+                                            <div class="mt-4 space-y-4">
+                                                <div class="flex items-center">
+                                                    <input id="aa" name="genotype" type="radio" class="">
+                                                    <label for="aa"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        AA
+                                                    </label>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <input id="ac" name="genotype" type="radio" class="">
+                                                    <label for="ac"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        AC
+                                                    </label>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <input id="as" name="genotype" type="radio" class="">
+                                                    <label for="as"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        AS
+                                                    </label>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <input id="ss" name="genotype" type="radio" class="">
+                                                    <label for="ss"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        AS
+                                                    </label>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <input id="sc" name="genotype" type="radio" class="">
+                                                    <label for="sc"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        SC
+                                                    </label>
+                                                </div>
+
+
+                                            </div>
+                                        </fieldset>
+                                        <fieldset class="mb-4">
+                                            <div>
+                                                <legend class="text-base font-bold text-gray-900">Blood Group</legend>
+                                                <p class="text-sm text-gray-500">Please provide you blood group</p>
+                                            </div>
+                                            <div class="mt-4 space-y-4">
+                                                <div class="flex items-center">
+                                                    <input id="a" name="blood" type="radio" class="">
+                                                    <label for="a"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        A
+                                                    </label>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <input id="ab" name="blood" type="radio" class="">
+                                                    <label for="ab"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        AB
+                                                    </label>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <input id="b" name="blood" type="radio" class="">
+                                                    <label for="b"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        B
+                                                    </label>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <input id="o" name="blood" type="radio" class="">
+                                                    <label for="o"
+                                                        class="ml-3 block text-base font-medium text-gray-700">
+                                                        O
+                                                    </label>
+                                                </div>
+
+
+
+                                            </div>
+                                        </fieldset>
+                                        <div>
+                                            <label for="about" class="block text-lg font-bold text-gray-700">
+                                                About You
+                                            </label>
+                                            <div class="mt-1">
+                                                <textarea id="about" name="about" rows="4" class=""
+                                                    placeholder="you@example.com"></textarea>
+                                            </div>
+                                            <p class="mt-2 text-base text-gray-500">
+                                                Brief description for your profile. URLs are hyperlinked.
+                                            </p>
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-base font-medium text-gray-700">
+                                                Photo
+                                            </label>
+                                            <div class="mt-1 flex items-center">
+                                                <span
+                                                    class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
+                                                    <svg class="h-full w-full text-gray-300" fill="currentColor"
+                                                        viewBox="0 0 24 24">
+                                                        <path
+                                                            d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
+                                                    </svg>
+                                                </span>
+                                                <button type="button"
+                                                    class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-base leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                                    Change
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <label class="block text-base font-medium text-gray-700">
+                                                Cover photo
+                                            </label>
+                                            <div
+                                                class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
+                                                <div class="space-y-1 text-center">
+                                                    <svg class="mx-auto h-12 w-12 text-gray-400" stroke="currentColor"
+                                                        fill="none" viewBox="0 0 48 48" aria-hidden="true">
+                                                        <path
+                                                            d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
+                                                            stroke-width="2" stroke-linecap="round"
+                                                            stroke-linejoin="round" />
+                                                    </svg>
+                                                    <div class="flex text-base text-gray-600">
+                                                        <label for="file-upload"
+                                                            class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
+                                                            <span>Upload a file</span>
+                                                            <input id="file-upload" name="file-upload" type="file"
+                                                                class="sr-only">
+                                                        </label>
+                                                        <p class="pl-1">or drag and drop</p>
+                                                    </div>
+                                                    <p class="text-xs text-gray-500">
+                                                        PNG, JPG, GIF up to 10MB
                                                     </p>
-                                                </div>
-                                                <div class="mt-4 space-y-4">
-                                                    <div class="flex items-center">
-                                                        <input id="a" name="blood" value="A" type="radio" class=""
-                                                            [(ngModel)]="user.bloodGroup">
-                                                        <label for="a"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            A
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input id="ab" name="blood" value="AB" type="radio" class=""
-                                                            [(ngModel)]="user.bloodGroup">
-                                                        <label for="ab"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            AB
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input id="b" name="blood" value="B" type="radio" class=""
-                                                            [(ngModel)]="user.bloodGroup">
-                                                        <label for="b"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            B
-                                                        </label>
-                                                    </div>
-                                                    <div class="flex items-center">
-                                                        <input id="o" name="blood" value="O" type="radio" class=""
-                                                            [(ngModel)]="user.bloodGroup">
-                                                        <label for="o"
-                                                            class="ml-3 block text-base font-medium text-gray-700">
-                                                            O
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </fieldset>
-                                            <div>
-                                                <label for="about" class="block text-lg font-bold text-gray-700">
-                                                    About You
-                                                </label>
-                                                <div class="mt-1">
-                                                    <textarea id="about" name="about" rows="4" class=""
-                                                        placeholder="you@example.com"
-                                                        [(ngModel)]="user.about"></textarea>
-                                                </div>
-                                                <p class="mt-2 text-base text-gray-500">
-                                                    Brief description for your profile. URLs are hyperlinked.
-                                                </p>
-                                            </div>
-
-                                            <div>
-                                                <label class="block text-base font-medium text-gray-700">
-                                                    Photo
-                                                </label>
-                                                <div class="mt-1 flex items-center">
-                                                    <span
-                                                        class="inline-block h-12 w-12 rounded-full overflow-hidden bg-gray-100">
-                                                        <svg class="h-full w-full text-gray-300" fill="currentColor"
-                                                            viewBox="0 0 24 24">
-                                                            <path
-                                                                d="M24 20.993V24H0v-2.996A14.977 14.977 0 0112.004 15c4.904 0 9.26 2.354 11.996 5.993zM16.002 8.999a4 4 0 11-8 0 4 4 0 018 0z" />
-                                                        </svg>
-                                                    </span>
-                                                    <button type="button"
-                                                        class="ml-5 bg-white py-2 px-3 border border-gray-300 rounded-md shadow-sm text-base leading-4 font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                                                        Change
-                                                    </button>
-                                                </div>
-                                            </div>
-
-                                            <div>
-                                                <label class="block text-base font-medium text-gray-700">
-                                                    Cover photo
-                                                </label>
-                                                <div
-                                                    class="mt-1 flex justify-center px-6 pt-5 pb-6 border-2 border-gray-300 border-dashed rounded-md">
-                                                    <div class="space-y-1 text-center">
-                                                        <svg class="mx-auto h-12 w-12 text-gray-400"
-                                                            stroke="currentColor" fill="none" viewBox="0 0 48 48"
-                                                            aria-hidden="true">
-                                                            <path
-                                                                d="M28 8H12a4 4 0 00-4 4v20m32-12v8m0 0v8a4 4 0 01-4 4H12a4 4 0 01-4-4v-4m32-4l-3.172-3.172a4 4 0 00-5.656 0L28 28M8 32l9.172-9.172a4 4 0 015.656 0L28 28m0 0l4 4m4-24h8m-4-4v8m-12 4h.02"
-                                                                stroke-width="2" stroke-linecap="round"
-                                                                stroke-linejoin="round" />
-                                                        </svg>
-                                                        <div class="flex text-base text-gray-600">
-                                                            <label for="file-upload"
-                                                                class="relative cursor-pointer bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus-within:outline-none focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-indigo-500">
-                                                                <span>Upload a file</span>
-                                                                <input id="file-upload" name="file-upload" type="file"
-                                                                    class="sr-only">
-                                                            </label>
-                                                            <p class="pl-1">or drag and drop</p>
-                                                        </div>
-                                                        <p class="text-xs text-gray-500">
-                                                            PNG, JPG, GIF up to 10MB
-                                                        </p>
-                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </form>
-                            </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-
                     <div class="hidden sm:block" aria-hidden="true">
                         <div class="py-5">
                             <div class="border-t border-gray-200"></div>
                         </div>
                     </div>
-                    <div class="px-4 py-3 text-right sm:px-6 mx-40">
-                        <!-- <button type="button"
-                            class="inline-flex justify-center py-3 px-5 text-base font-bold rounded-lg text-[#1c3349] bg-white border-[#1c3559] border mr-4">
-                            Save and Continue
-                        </button> -->
-                        <button type="button" (click)="submit()"
-                            class="inline-flex justify-center py-3 px-5 text-base font-bold rounded-md text-white bg-[#1c3359] shadow-lg">
-                            {{loading===false ? 'Save' : 'Saving ....'}}
-
-                        </button>
-                    </div>
                 </div>
-
-
-
-
-
-
-
+                <div class="flex justify-end mx-auto px-4 py-3 m:px-6 md:mx-40">
+                    <button type="button"class="inline-flex justify-center py-3 px-5 text-base font-bold rounded-lg text-[#1c3349] bg-white border-[#1c3559] border mr-4">
+                        Save and Continue
+                    </button>
+                    <button type="button" class="inline-flex justify-center py-3 px-5 text-base font-bold rounded-md text-white bg-[#1c3359] shadow-lg">
+                        Submit
+                    </button>
+                </div>
             </div>
-
         </div>
 
+    </div>
 
 
 
 
+    <!--Main content ends-->
+    <!-- Component End  -->
 
-
-
-        <!-- <a class="fixed flex items-center justify-center h-8 pr-2 pl-1 bg-blue-600 rounded-full bottom-0 right-0 mr-4 mb-4 shadow-lg text-blue-100 hover:bg-blue-600" href="https://twitter.com/lofiui" target="_top">
+    <!-- <a class="fixed flex items-center justify-center h-8 pr-2 pl-1 bg-blue-600 rounded-full bottom-0 right-0 mr-4 mb-4 shadow-lg text-blue-100 hover:bg-blue-600" href="https://twitter.com/lofiui" target="_top">
         <div class="flex items-center justify-center h-6 w-6 bg-blue-500 rounded-full">
             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" class="r-jwli3a r-4qtqp9 r-yyyyoo r-16y2uox r-1q142lx r-8kz0gk r-dnmrzs r-bnwqim r-1plcrui r-lrvibr r-1srniue"><g><path d="M23.643 4.937c-.835.37-1.732.62-2.675.733.962-.576 1.7-1.49 2.048-2.578-.9.534-1.897.922-2.958 1.13-.85-.904-2.06-1.47-3.4-1.47-2.572 0-4.658 2.086-4.658 4.66 0 .364.042.718.12 1.06-3.873-.195-7.304-2.05-9.602-4.868-.4.69-.63 1.49-.63 2.342 0 1.616.823 3.043 2.072 3.878-.764-.025-1.482-.234-2.11-.583v.06c0 2.257 1.605 4.14 3.737 4.568-.392.106-.803.162-1.227.162-.3 0-.593-.028-.877-.082.593 1.85 2.313 3.198 4.352 3.234-1.595 1.25-3.604 1.995-5.786 1.995-.376 0-.747-.022-1.112-.065 2.062 1.323 4.51 2.093 7.14 2.093 8.57 0 13.255-7.098 13.255-13.254 0-.2-.005-.402-.014-.602.91-.658 1.7-1.477 2.323-2.41z"></path></g></svg>
         </div>
         <span class="text-sm ml-1 leading-none">@lofiui</span>
     </a>  -->
+
+</body>
+
+</html>

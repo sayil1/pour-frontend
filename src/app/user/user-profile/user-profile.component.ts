@@ -4,6 +4,7 @@ import decode from 'jwt-decode';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { NotifierService } from 'angular-notifier';
+import { ViewportScroller } from '@angular/common';
 
 @Component({
   selector: 'app-user-profile',
@@ -11,7 +12,7 @@ import { NotifierService } from 'angular-notifier';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent {
-  constructor( private user_service: UserDataService, public router: Router, private notifierService: NotifierService){
+  constructor( private user_service: UserDataService, public router: Router, private notifierService: NotifierService, private viewportScroller: ViewportScroller){
 
   }
 
@@ -109,6 +110,10 @@ loading:boolean = false
       }
     })
   }
+
+  public onClick(elementId: string): void { 
+    this.viewportScroller.scrollToAnchor(elementId);
+}
 
   logout(){
     localStorage.clear();
